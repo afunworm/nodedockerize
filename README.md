@@ -1,4 +1,4 @@
-![nodedockerize](icon.png)
+![nodedockerize](nodedockerize.png)
 
 # nodedockerize | Dockerize Your Node JS Apps
 
