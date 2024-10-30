@@ -1,0 +1,6 @@
+{
+	"scripts": {
+		"build": "docker build -t afunworm/nodedockerize ./",
+		"publish": "docker push afunworm/nodedockerize"
+	}
+}

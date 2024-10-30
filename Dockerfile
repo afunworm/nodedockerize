@@ -1,5 +1,5 @@
 # Use the latest Node.js version with the Alpine Linux base
-FROM node:20-alpine
+FROM node:22-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -7,5 +7,8 @@ WORKDIR /app
 # Copy everything in the current folder over
 COPY . .
 
+# Set default entry file
+ENV ENTRY=index.js
+
 # Run the server
-CMD [ "node", "index.js" ]
+CMD [ "sh", "-c", "node $ENTRY" ]

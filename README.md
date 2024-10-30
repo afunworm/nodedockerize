@@ -50,10 +50,6 @@ ports:
 
 To update your app, simply change the files as if you were developing it, and restart the container.
 
-## LIMIT
-
-Your script has to be named `index.js`. If your script is written in TypeScript, you would have to compile it before starting the docker container.
-
 ## docker-compose.yml Example
 
 ```yaml
@@ -64,8 +60,12 @@ services:
         volumes:
             - ./:/app
         # Only expose the ports the server is running on
-        # ntfy-directus doesn't run on any port
+        # If your app is listening on port 8080, you can map it to 8080 outside
+        # or any other port you desire
         # ports:
-        #   - 80:80
+        #   - 8080:8080
+        environment:
+            # You can set the entry file, such as index.mjs
+            - ENTRY=index.js
         image: afunworm/nodedockerize:latest
 ```
