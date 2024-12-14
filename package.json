@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"build": "docker build -t afunworm/nodedockerize ./",
+		"build": "docker buildx build --platform linux/amd64,linux/arm64 -t afunworm/nodedockerize --push ./",
 		"publish": "docker push afunworm/nodedockerize"
 	}
 }
